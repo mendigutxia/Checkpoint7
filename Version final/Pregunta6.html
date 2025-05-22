@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Pregunta primera</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/comunes.css">
+	<link rel="stylesheet" href="styles/pregunta6.css">
+	<link rel="stylesheet" href="styles/prism.css">
+
+</head>
+<body>
+<script src="js/prism.js"></script>
+
+<div class="web-completa">
+	<div class="cabecera">Checkpoint nº 7: preguntas teóricas</div>
+
+	<div class="cuerpo">
+		<div class="indice">
+			<h2>Índice de preguntas</h2>
+			<a href="Index.html" class="grid-item" target="_self">
+				¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</span>
+			</a>
+			<a href="Pregunta2.html" class="grid-item" target="_self">
+				¿Cuáles son todos los tipos de datos JS?</span>
+			</a>
+			<a href="Pregunta3.html" class="grid-item" target="_self">
+				¿Cuáles son las tres funciones de String en JS?</span>
+			</a>
+			<a href="Pregunta4.html" class="grid-item" target="_self">
+				¿Qué es un condicional?</span>
+			</a>
+				<a href="Pregunta5.html" class="grid-item" target="_self">
+				¿Qué es un operador ternario?</span>
+			</a>
+				<a href="Pregunta6.html" class="grid-item" target="_self">
+				¿Cuál es la diferencia entre una declaración de función y una expresión de función?</span>
+			</a>
+				<a href="Pregunta7.html" class="grid-item" target="_self">
+				¿Qué es la palabra clave "this" en JS?</span>
+			</a>
+		</div>
+
+		<div class="contenido">
+		<h2>¿Cuál es la diferencia entre una declaración de función y una expresión de función?</h2>
+		<div class="intro">
+			<p>La diferencia principal entre una declaración de función y una expresión de función en JavaScript 
+			radica en su <b>sintaxis</b> y en cómo se manejan durante la <b>fase de elevación (hoisting)</b> 
+			del código.</p><p>Ambas formas se utilizan para crear funciones, pero tienen comportamientos distintos.</p>
+
+		</div>
+		<ol>
+			<li class="puntos-numerados"><b>Declaración de Función (Function Declaration)</b>
+				<ul>
+					<li class ="bullet-point"><b>Sintaxis.</b>Comienza con la palabra clave function, seguida del nombre de la 
+						función, paréntesis para los parámetros y llaves para el cuerpo de la función.
+						<pre><code class="language-javascript">
+function nombreFuncion(parametros) {
+
+	// Código
+
+}
+						</code></pre>				
+					</li>
+					<li class ="bullet-point"><b>Hoisting.</b> Las declaraciones de función se elevan completamente al principio de su 
+						ámbito (scope) antes de que se ejecute el código. Esto significa que puedes llamar a una 
+						declaración de función antes de que aparezca en el código.
+					</li>
+					<li class ="bullet-point"><b>Nombre.</b> Siempre tienen un nombre.
+					</li>
+					<li class ="bullet-point" class="ejemplo"><b>Ejemplo</b>
+						<pre><code class="language-javascript">
+	// ¡Podemos llamar a esta función ANTES de su definición en el código!
+	saludar("Mundo"); 		// Salida: Hola, Mundo!
+	function saludar(nombre) {
+	console.log("Hola, " + nombre + "!");
+	}
+	// También podemos llamarla después
+	saludar("JavaScript"); 		// Salida: Hola, JavaScript!
+						</code></pre>
+						<p>JavaScript "lee" primero todas las declaraciones de función en un ámbito y las 
+						pone a disposición en la parte superior. Por eso, en el ejemplo, podemos 
+						llamar a saludar() antes de la línea donde se escribe la 
+						declaración function <i>saludar(...)</i>.</p>
+					</li>
+				</ul>
+			</li>
+			<li class="puntos-numerados"><b>Expresión de Función (Function Expression)</b>
+				<ul>
+					<li class ="bullet-point"><p><b>Sintaxis.</b>La función se crea como parte de una expresión. A menudo, 
+						esto significa asignar una función (que puede ser anónima o nombrada) a una variable.</p>
+						<p><b>Función anónima</b></p>
+						<pre><code class="language-javascript">
+	let* nombreFuncion = function(parametros) {
+
+		// Código
+
+	};
+						</code></pre>
+						<p><b>Función nombrada</b></p>
+						<pre><code class="language-javascript">
+let* variable = function nombreFuncion(parametros) {
+
+	// Código
+
+};
+						</code></pre>
+						<p>*Podemos emplear let, const o var</p>				
+					</li>
+					<li class ="bullet-point"><b>Hoisting.</b>Solo la variable a la que se asigna la función se eleva (declarada), 
+						pero la asignación del valor (la función en sí) no ocurre hasta que la línea de código donde se define 
+						la expresión es ejecutada
+					</li>
+					<li class ="bullet-point"><b>Nombre.</b>Pueden ser anónimas (sin nombre, lo más común) o nombradas. Si tienen 
+						un nombre (expresión de función nombrada), ese nombre solo está disponible dentro de la propia función 
+						(para recursión, por ejemplo) y no fuera.
+					</li>
+					<li class ="bullet-point" class="ejemplo"><b>Ejemplo de Expresión de Función (Anónima)</b>
+						<pre><code class="language-javascript">
+// despedir("Usuarios");  	// ReferenceError: Cannot access 'despedir' before initialization
+// o si usas var: TypeError: despedir is not a function
+let despedir = function(nombre) { 	// La función se define en esta línea
+	console.log("Adiós, " + nombre + ".");
+};
+// Ahora sí podemos llamarla
+despedir("Usuarios"); 		// Salida: Adiós, Usuarios.
+						</code></pre>
+						<p>Con una expresión de función, la función no está completamente disponible hasta que el intérprete 
+							llega a la línea donde se define y asigna a la variable (despedir en este caso). Intentar usar la 
+							variable despedir antes de esa línea resultará en un error porque la variable existe (gracias al 
+							hoisting si se usa var, let o const), pero su valor aún no es la función esperada.</p>
+					</li>
+					<li class ="bullet-point" class="ejemplo"><b>Ejemplo de Expresión de Función (Nombrada)</b>
+						<pre><code class="language-javascript">
+let calcularFactorial = function factorial(n) {
+if (n <= 1) {
+	return 1;
+} else {
+	// Podemos usar el nombre 'factorial' internamente
+	return n * factorial(n - 1);
+}
+};
+console.log(calcularFactorial(5)); 	// Salida: 120
+// No podemos usar el nombre 'factorial' fuera de la función
+// console.log(factorial(3)); 		// ReferenceError: factorial is not define
+						</code></pre>
+						<p>El nombre factorial solo es accesible dentro del cuerpo de la función calcularFactorial. Fuera, 
+							solo se puede acceder a la función a través de la variable calcularFactorial. Esto es útil 
+							para recursión o para facilitar la depuración (el nombre aparece en los rastreos de pila).</p>
+					</li>
+				</ul>
+			</li>
+
+
+			<div class="punto-suelto"><b>Diferencias Clave en Resumen</i></b>
+				
+				<table>
+					<thead>
+					<tr>
+						<th>Característica</th>
+						<th>Declaración de Función (function nombre() { ... })</th>
+						<th>Expresión de Función (let variable = function() { ... };)</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Sintaxis</td>
+						<td>function palabra clave seguida de nombre</td>
+						<td>Como parte de una expresión (usualmente asignada a variable)</td>
+					</tr>
+					<tr>
+						<td>Hoisting</td>
+						<td>Se eleva completamente (cuerpo y definición)</td>
+						<td>Solo se eleva la variable, la definición no hasta ejecución</td>
+					</tr>
+					<tr>
+						<td>Llamar antes definir</td>
+						<td>Sí</td>
+						<td>No (resulta en error)</td>
+					</tr>
+					<tr>
+						<td>Nombre</td>
+						<td>Obligatorio</td>
+						<td>Opcional (puede ser anónima o nombrada)</td>
+					</tr>
+					<tr>
+						<td>Ámbito del Nombre		</td>
+						<td>Disponible en el ámbito donde se declara</td>
+						<td>Si es nombrada, el nombre solo disponible dentro de la función</td>
+					</tr>
+					</tbody>
+				</table>
+				
+				<p>En general, las declaraciones de función son útiles para definir funciones de utilidad generales 
+					que puedes necesitar llamar desde cualquier parte de tu código dentro de su ámbito. 
+					Las expresiones de función son más versátiles y se usan a menudo para:</p>
+				<ul>
+					<li class="bullet-point">Callbacks (funciones que se pasan como argumentos a otras funciones).</li>
+					<li class="bullet-point">Funciones inmediatamente invocadas (IIFEs).</li>
+					<li class="bullet-point">Métodos de objetos.</li>
+					<li class="bullet-point">Cuando necesitas que la función no esté disponible antes de cierto punto en la ejecución.</li>
+				</ul>
+			<div>
+				<p>Entender el hoisting es clave para comprender la diferencia en el comportamiento de 
+					estas dos formas de definir funciones.</p>
+			</div>
+
+
+		</ol>
+		</div>
+
+
+
+
+
+
+	</div>
+</div>
+</body>	

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Pregunta primera</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/comunes.css">
+	<link rel="stylesheet" href="styles/prism.css">
+
+</head>
+<body>
+<script src="js/prism.js"></script>
+<div class="web-completa">
+	<div class="cabecera">Checkpoint nº 7: preguntas teóricas</div>
+
+	<div class="cuerpo">
+		<div class="indice">
+			<h2>Índice de preguntas</h2>
+			<a href="Index.html" class="grid-item" target="_self">
+				¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</span>
+			</a>
+			<a href="Pregunta2.html" class="grid-item" target="_self">
+				¿Cuáles son todos los tipos de datos JS?</span>
+			</a>
+			<a href="Pregunta3.html" class="grid-item" target="_self">
+				¿Cuáles son las tres funciones de String en JS?</span>
+			</a>
+			<a href="Pregunta4.html" class="grid-item" target="_self">
+				¿Qué es un condicional?</span>
+			</a>
+				<a href="Pregunta5.html" class="grid-item" target="_self">
+				¿Qué es un operador ternario?</span>
+			</a>
+				<a href="Pregunta6.html" class="grid-item" target="_self">
+				¿Cuál es la diferencia entre una declaración de función y una expresión de función?</span>
+			</a>
+				<a href="Pregunta7.html" class="grid-item" target="_self">
+				¿Qué es la palabra clave "this" en JS?</span>
+			</a>
+		</div>
+
+		<div class="contenido">
+	<h2>¿Cuáles son todos los tipos de datos JS?</h2>
+	<div class="intro">
+		Hay 8 tipos de datos principales, agrupados en dos categorías: primitivos y no primitivos (Objetos).
+	</div>
+	<div class="punto-principal">
+		<b>Datos Primitivos</b><br>
+		Los tipos primitivos representan valores únicos e inmutables. Cuando asignas una 
+		variable con un valor primitivo a otra variable, se copia el valor.
+	</div>
+		<ol>
+			<li class="puntos-numerados"><b>String.</b> Se utiliza para representar texto. Se puede definir 
+				usando comillas simples ('...'), comillas dobles ("...") o backticks (`...`) para las plantillas 
+				literales (template literals).
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo con comillas simples
+						<pre><code class="language-javascript">
+let nombre = 'Txomin';</br>
+console.log(nombre); 			// Salida: Txomin</br>
+console.log(typeof nombre); 	// Salida: string</br>
+						</code></pre>
+						<!-- <script src="js/prism.js"></script> -->
+					</li>
+					<li class="bullet-point">
+						Ejemplo con comillas dobles
+						<pre><code class="language-javascript">
+let nombre = "Txomin";</br>
+console.log(nombre); 			// Salida: Txomin</br>
+console.log(typeof nombre); 	// Salida: string</br>
+						</code></pre>
+					</li>
+					<li class="bullet-point">
+						Ejemplo con backticks
+						<pre><code class="language-javascript">
+let nombre = `Txomin`;</br>
+console.log(nombre); 			// Salida: Txomin</br>
+console.log(typeof nombre); 	// Salida: string</br>
+					</code></pre>
+					</li>
+				</ul>
+			</li>
+
+			<li class="puntos-numerados"><b> Number.</b> Representa tanto números enteros como números de punto 
+				flotante (decimales). También incluye los valores especiales 
+				Infinity, -Infinity y NaN (Not a Number).
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo de entero
+						<pre><code class="language-javascript">
+let edad = 30;</br>
+console.log(edad); 			// Salida: 30</br>
+console.log(typeof edad); 		// Salida: number</br>
+						</code></pre>
+					</li>
+					<li class="bullet-point">
+						Ejemplo de punto flotante
+						<pre><code class="language-javascript">
+let precio = 19.99;</br>
+console.log(precio); 			// Salida: 19.99</br>
+console.log(typeof precio); 		// Salida: number</br>
+						</code></pre>
+					</li>
+					<li class="bullet-point">
+						Ejemplo de Infinity
+						<pre><code class="language-javascript">
+let infinitoPositivo = 1 / 0;</br>
+console.log(infinitoPositivo); 		// Salida: Infinity</br>
+console.log(typeof infinitoPositivo); // Salida: number</br>
+						</code></pre>
+					</li>
+					<li class="bullet-point">
+						Ejemplo de NaN
+						<pre><code class="language-javascript">
+let resultadoErroneo = "hola" * 5;</br>
+console.log(resultadoErroneo); 		// Salida: NaN</br>
+console.log(typeof resultadoErroneo); 	// Salida: number</br>
+						</code></pre>
+					</li>
+				</ul>
+			</li>
+
+			<li class="puntos-numerados"><b>Boolean.</b> Representa un valor lógico que puede ser true (verdadero) 
+				o false (falso). Se utiliza comúnmente en estructuras de control como condicionales y bucles.
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo
+						<pre><code class="language-javascript">
+let estaActivo = true;</br>
+let esMayorDeEdad = false;</br>
+console.log(estaActivo); 			// Salida: true</br>
+console.log(typeof estaActivo); 		// Salida: boolean</br>
+console.log(esMayorDeEdad); 		// Salida: false</br>
+console.log(typeof esMayorDeEdad); 	// Salida: boolean</br>
+						</code></pre>
+					</li>
+				</ul>
+			</li>
+
+			<li class="puntos-numerados"><b>Null.</b>  Este tipo tiene un único valor: null. Se utiliza para 
+				indicar la ausencia intencionada de cualquier valor o la ausencia de un objeto.
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo
+						<pre><code class="language-javascript">
+let datoNulo = null;</br>
+console.log(datoNulo); 		// Salida: null</br>
+console.log(typeof datoNulo); 	// Salida: object (esto un error histórico)</br>
+						</code></pre>
+					</li>
+				</ul>
+			</li>
+
+			<li class="puntos-numerados"><b>Undefined.</b>.Representa una variable que ha sido declarada 
+				pero a la que aún no se le ha asignado un valor.
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo
+						<pre><code class="language-javascript">
+let variableSinValor;</br>
+console.log(variableSinValor); 		// Salida: undefined</br>
+console.log(typeof variableSinValor); 	// Salida: undefined</br>
+						</code></pre>
+					</li>
+				</ul>
+			</li>
+
+			<li class="puntos-numerados"><b>Symbol.</b>(Introducido en ECMAScript 6) Representa un valor 
+				primitivo único e inmutable. Cada valor Symbol creado es único, incluso si tienen la misma descripción. 
+				Son útiles para crear identificadores de propiedades de objeto que no colisionen.
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo
+						<pre><code class="language-javascript">
+const id1 = Symbol('identificador');</br>
+const id2 = Symbol('identificador');</br>
+console.log(id1 === id2); 		// Salida: false (son únicos)</br>
+console.log(typeof id1); 		// Salida: symbol</br>
+						</code></pre>
+					</li>
+				</ul>
+			</li>
+
+			<li class="puntos-numerados"><b>BigInt.</b>(Introducido en ECMAScript 11) Permite trabajar con números 
+				enteros de tamaño arbitrario, superando el límite de precisión de Number para enteros grandes. Se crea 
+				añadiendo n al final de un número entero o utilizando la función BigInt().
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo
+						<pre><code class="language-javascript">
+const numeroGrande = 9007199254740991n; 		// Literal BigInt</br>
+const otroNumeroGrande = BigInt("9007199254740991"); // Usando la función BigInt()</br>
+console.log(numeroGrande); 		// Salida: 9007199254740991n</br>
+console.log(typeof numeroGrande); 	// Salida: bigint</br>
+// Puedes realizar operaciones con BigInt</br>
+const sumaGrande = numeroGrande + 1n;</br>
+console.log(sumaGrande); // Salida: 9007199254740992n</br>
+						</code></pre>
+					</li>
+				</ul>
+			</li>
+		
+
+		</ol>
+	<div class="punto-principal">
+		<b>Dato No Primitivo</b><br>
+		A diferencia de los primitivos, los objetos son <b>mutables</b> y se pasan por <b>referencia</b>.
+		<ol>
+			<li class="puntos-numerados"><b>Object.</b>Es el tipo fundamental para estructuras de datos más complejas. 
+				Representa una colección de propiedades, donde cada propiedad tiene un nombre (una clave, que es una cadena o 
+				un Symbol) y un valor (que puede ser cualquier tipo de dato, incluidos otros objetos). Arrays, funciones, 
+				fechas, expresiones regulares, Mapas, Sets, etc., son todos tipos de objetos.
+				<ul class="bullet-points">
+					<li class="bullet-point">
+						Ejemplo de Objeto Literal
+						<pre><code class="language-javascript">
+let persona = {</br>
+nombre: 'Carlos',</br>
+edad: 25,</br>
+ciudad: 'Madrid'</br>
+};</br>
+console.log(persona); 	// Salida: { nombre: 'Carlos', edad: 25, ciudad: 'Madrid' }</br>
+console.log(typeof persona); 	// Salida: object</br>
+						</code></pre>
+					</li>
+					<li class="bullet-point">
+						Ejemplo de Array (que es un tipo de Objeto)
+						<pre><code class="language-javascript">
+let numeros = [1, 2, 3, 4, 5];</br>
+console.log(numeros); 		 // Salida: [ 1, 2, 3, 4, 5 ]</br>
+console.log(typeof numeros); 	 // Salida: object</br>
+console.log(Array.isArray(numeros)); // Salida: true (forma más fiable de comprobar si es un array)</br>
+						</code></pre>
+					</li>
+					<li class="bullet-point">
+						Ejemplo de Función (que también es un tipo de Objeto)
+						<pre><code class="language-javascript">
+function saludar(nombre) {</br>
+return "Hola, " + nombre;</br>
+}</br>
+console.log(saludar('Ana')); 		// Salida: Hola, Ana</br>
+console.log(typeof saludar); 		// Salida: function (Nota: typeof para funcione</br>
+									devuelve "function", aunque son objetos)</br>
+						</code></pre>
+					</li>
+				</ul>
+			</li>
+		</ol>
+
+
+	</div>
+	<div class="punto-principal">
+		<b>Comprobación con typeof</b><br>
+		La función <b>typeof</b> nos permitie comprobar el tipo de dato de un elemento.
+		<ol>
+			<ul>
+				<li class="bullet-point">	
+					Ejemplo		
+					<pre><code class="language-javascript">
+console.log(typeof undefined);   	// "undefined"</br>
+console.log(typeof null);       		// "object" (error histórico)</br>
+console.log(typeof true);       		// "boolean"</br>
+console.log(typeof 42);        		// "number"</br>
+console.log(typeof "texto");   	// "string"</br>
+console.log(typeof Symbol());   	// "symbol"</br>
+console.log(typeof 10n);        		// "bigint"</br>
+console.log(typeof {});        		// "object"</br>
+console.log(typeof []);         		// "object"</br>
+console.log(typeof function(){});	// "function" (aunque es un objeto)</br>
+					</code></pre>
+				</li>
+			</ul>
+			</ol>
+		</div>
+	<div class="punto-principal">
+		<b>Casos Especiales</b><br>
+		<ol>
+			<ul>
+				<li class="bullet-point">	
+					NaN (Not a Number):</br>Ejemplo		
+					<pre><code class="language-javascript">
+console.log(typeof NaN); // "number"</br>
+					</code></pre>
+				</li>
+				
+				<li class="bullet-point">
+					Array vs Objeto: los arrays son objetos, pero se diferencian por su estructura.</br>
+					Ejemplo		
+					<pre><code class="language-javascript">
+console.log(Array.isArray([])); // true</br>
+console.log(Array.isArray({})); // false</br>
+					</code></pre>
+				</li>
+			</ul>
+		</ol>
+	<div class="punto-principal">
+		<b>Importante recordar</b><br>
+		<ul>
+			<li>	
+				Los tipos primitivos son inmutables y se copian por valor.
+			</li>
+			<li>	
+				Los objetos son mutables y se pasan por referencia.</br>
+			</li>
+			<li>	
+				JavaScript realiza coerción de tipos automática (ej: "5" + 2 = "52").</br>
+			</li>
+			
+	</div>
+</div>
+		</div>
+
+
+
+
+
+
+	</div>
+</div>
+</body>	

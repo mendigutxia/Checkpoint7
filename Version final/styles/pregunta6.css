@@ -1,0 +1,34 @@
+.descripcion {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+th {
+    border: 1px solid #dddddd;
+    background-color: #091638;
+    color: white;
+    text-align: left;
+    padding: 8px;
+}
+
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #ced7f0;
+}
+
+
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Pregunta primera</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/comunes.css">
+	<link rel="stylesheet" href="styles/pregunta5.css">
+	<link rel="stylesheet" href="styles/prism.css">
+
+</head>
+<body>
+<script src="js/prism.js"></script>
+
+<div class="web-completa">
+	<div class="cabecera">Checkpoint nº 7: preguntas teóricas</div>
+
+	<div class="cuerpo">
+		<div class="indice">
+			<h2>Índice de preguntas</h2>
+			<a href="Index.html" class="grid-item" target="_self">
+				¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</span>
+			</a>
+			<a href="Pregunta2.html" class="grid-item" target="_self">
+				¿Cuáles son todos los tipos de datos JS?</span>
+			</a>
+			<a href="Pregunta3.html" class="grid-item" target="_self">
+				¿Cuáles son las tres funciones de String en JS?</span>
+			</a>
+			<a href="Pregunta4.html" class="grid-item" target="_self">
+				¿Qué es un condicional?</span>
+			</a>
+				<a href="Pregunta5.html" class="grid-item" target="_self">
+				¿Qué es un operador ternario?</span>
+			</a>
+				<a href="Pregunta6.html" class="grid-item" target="_self">
+				¿Cuál es la diferencia entre una declaración de función y una expresión de función?</span>
+			</a>
+				<a href="Pregunta7.html" class="grid-item" target="_self">
+				¿Qué es la palabra clave "this" en JS?</span>
+			</a>
+		</div>
+
+		<div class="contenido">
+		<h2>¿Qué es un operador ternario?</h2>
+		<div class="intro">
+			El <b>operador ternario</b> (también conocido como operador condicional ternario) 
+			en JavaScript es un atajo para una declaración if...else simple. 
+			Es el <b>único operador</b> en JavaScript que toma tres operandos. 
+			La sintaxis del operador ternario es la siguiente:
+		</div>
+		<ul class="bullet-points">
+<pre><code class="language-javascript">
+	condición ? expresiónSiVerdadero : expresiónSiFalso
+	
+</code></pre>
+		</ul>		
+		<div class="punto"><b>Componentes</b>
+			<ol class="bullet-points">
+				<li class="bullet-point"> <b>condición</b> -> Una expresión que se evalúa como true o false. Va al principio.</li>
+				<li class="bullet-point"> <b>?</b>-> Separa la condición de las dos posibles expresiones de resultado.</li>
+				<li class="bullet-point"> <b>expresiónSiVerdadero</b>: El valor o expresión que se devuelve si la condición es verdadera.</li>
+				<li class="bullet-point"> <b>:</b> -> Separa la expresión que se devuelve si la condición es verdadera de la que se devuelve si es falsa.</li>
+				<li class="bullet-point"> <b>expresiónSiFalso</b> -> El valor o expresión que se devuelve si la condición es falsa.</li>
+			</ol>
+
+		</div>
+		<div class="punto"><b>Funcionamiento</b><br><br>El operador evalúa la condicion y:
+			<ul class="bullet-points">
+				<li class="bullet-point">Si la condicion es <b>true</b>, el operador devuelve el valor de <b>expresionSiVerdadero</b>.</li>
+				<li class="bullet-point">Si la condicion es <b>false</b>, el operador devuelve el valor de <b>expresionSiFalso</b>.</li>
+			</ul>
+
+		</div>
+		<div class="punto"><b>Ejemplo para comparar con un if...else</b><br>
+			<ul class="bullet-points">
+				<li class="bullet-point">Usando <b>if...else</b>.</li>
+				<pre><code class="language-javascript">
+let edad = 16;
+let mensaje;
+if (edad >= 18) {
+	mensaje = "Puedes votar.";
+} else {
+	mensaje = "Aún no puedes votar.";
+}
+console.log(mensaje); // Salida: Aún no puedes votar.
+				</code></pre>
+			<li class="bullet-point">Usando el <b>operador ternario</b>.</li>
+				<pre><code class="language-javascript">
+let edad = 16;
+let mensaje = (edad >= 18) ? "Puedes votar." : "Aún no puedes votar.";
+console.log(mensaje); // Salida: Aún no puedes votar.
+					</code></pre>
+			</ul>
+
+		</div>
+		<div class="punto"><b>Casos de uso</b><br><br>Es ideal para:
+			<ul class="bullet-points">
+				<li class="bullet-point">Asignar un valor a una variable basado en una condición simple, como en el ejemplo anterior..</li>
+				<li class="bullet-point">Devolver un valor de una función basado en una condición simple.</li>
+				<li class="bullet-point">Hacer tu código más conciso cuando la lógica condicional es muy sencilla.</li>
+			</ul>
+
+		</div>
+		<div class="punto"><b>¿Cuándo no usarlo?</b>
+		<p>Para lógicas más complejas con múltiples else if o código extenso dentro de cada rama, 
+		es mejor usar if...else if...else o switch para mantener la legibilidad del código. 
+		Anidar operadores ternarios puede hacer que el código sea difícil de leer y entender.</p>
+		<p>En resumen, el operador ternario es una herramienta concisa para decisiones simples de 
+			"si esto es verdadero, haz A, de lo contrario, haz B".</p>
+		</div>		
+		</div>
+
+
+
+
+
+
+	</div>
+</div>
+</body>	

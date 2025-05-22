@@ -1,0 +1,49 @@
+body {
+display: flex;
+justify-content: center;
+/* align-items: center; */
+}
+
+.container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 20px;
+    margin: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9em;
+    text-align: justify;
+    /* width: 70%;*/ 
+    max-width: 850px;
+}
+
+::marker {
+  font-weight: bold;
+}
+
+.puntos-numerados {
+    margin-bottom: 35px;
+}
+
+.bullet-points {
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 45px;
+}
+
+.codigo {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    max-width: 650px;
+    background-color: rgb(215, 230, 240);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 20px;
+}
+
+.punto-principal {
+    padding: 10px 0px;
+}
+
+
+

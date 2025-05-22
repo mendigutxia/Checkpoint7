@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Pregunta primera</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/comunes.css">
+	<link rel="stylesheet" href="styles/prism.css">
+
+</head>
+<body>
+<script src="js/prism.js"></script>
+
+<div class="web-completa">
+	<div class="cabecera">Checkpoint nº 7: preguntas teóricas</div>
+
+	<div class="cuerpo">
+		<div class="indice">
+			<h2>Índice de preguntas</h2>
+			<a href="Index.html" class="grid-item" target="_self">
+				¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</span>
+			</a>
+			<a href="Pregunta2.html" class="grid-item" target="_self">
+				¿Cuáles son todos los tipos de datos JS?</span>
+			</a>
+			<a href="Pregunta3.html" class="grid-item" target="_self">
+				¿Cuáles son las tres funciones de String en JS?</span>
+			</a>
+			<a href="Pregunta4.html" class="grid-item" target="_self">
+				¿Qué es un condicional?</span>
+			</a>
+				<a href="Pregunta5.html" class="grid-item" target="_self">
+				¿Qué es un operador ternario?</span>
+			</a>
+				<a href="Pregunta6.html" class="grid-item" target="_self">
+				¿Cuál es la diferencia entre una declaración de función y una expresión de función?</span>
+			</a>
+				<a href="Pregunta7.html" class="grid-item" target="_self">
+				¿Qué es la palabra clave "this" en JS?</span>
+			</a>
+		</div>
+		<div class="contenido">
+			<h2>¿Qué es la palabra clave "this" en JS?</h2>
+			<div class="intro">
+				<p>La palabra clave <b>this</b> en JavaScript es uno de los conceptos que más confusión genera, ya que su valor 
+					<b>no es fijo</b>, sino que depende completamente del <b>contexto en el que una función es llamada</b>. Es decir, 
+					<b>this</b> se refiere al objeto que está "ejecutando" el código actual. Se puede entender que <b>this</b> es como un pronombre que cambia de 
+					significado dependiendo de quién está hablando o en qué situación se usa. Las reglas principales que 
+					determinan el valor de <b>this</b> son las siguientes.
+				</p>
+			</div>
+			<ol>
+			<li class="puntos-numerados"><b>Vinculación Global (Default Binding)</b><p>Cuando una función es llamada de 
+				forma "suelta", sin un objeto asociado explícitamente, <b>this</b> generalmente se refiere al objeto global. En un 
+				navegador, el objeto global es window. En Node.js, es global.</p>
+				<ul class="bullet-points">
+					<li class ="bullet-point"><b>En modo no estricto:</b> <b>this</b> es el objeto global (window o global).</li>
+					<li class ="bullet-point"><b>En modo estricto ('use strict'):</b> <b>this</b> es undefined.</li>
+				</ul>	
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+// En modo no estricto (por defecto en scripts normales)
+function mostrarThisNoEstricto() {
+	console.log(this);
+}
+mostrarThisNoEstricto();       // En un navegador: [object Window], en Node.js: [object global]
+// En modo estricto
+function mostrarThisEstricto() {
+	'use strict';
+	console.log(this);
+}
+mostrarThisEstricto();  	// Salida: undefined
+					</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>Vinculación Implícita (Implicit Binding)</b><p>Cuando una función es llamada 
+				como un método de un objeto (usando la notación de punto "." o corchetes "[]" ) 
+				<b>this</b> se refiere al <b>objeto que posee el método</b>.</p>
+				<pre><code class="language-javascript">
+const persona = {
+nombre: "Juan",
+saludar: function() {
+	console.log("Hola, soy " + this.nombre); 	// 'this' se refiere al objeto 'persona'
+}
+};	
+persona.saludar(); // Salida: Hola, soy Juan
+				</code></pre>
+				<p>En este caso, saludar es un método del objeto persona. Cuando llamamos persona.saludar(), 
+				<b>this</b> dentro de saludar se vincula a persona.</p>
+			</li>
+
+			<li class="puntos-numerados"><b>Vinculación Explícita (Explicit Binding)</b><p>Puedes forzar el valor de <b>this</b>usando 
+				los métodos call(), apply(), o bind() que tienen las funciones.</p>
+				<ul class="bullet-points">
+					<li class="bullet-point"><b>call(thisArg, arg1, arg2, ...):</b> llama a la función inmediatamente, estableciendo 
+						<b>this</b> al primer argumento (thisArg) y pasando los argumentos adicionales individualmente.</li>
+					<li class="bullet-point"><b>apply(thisArg, [argsArray]):</b> Similar a call(), pero los argumentos se pasan como un array.</li>
+					<li class="bullet-point"><b>bind(thisArg, arg1, ...):</b> no llama a la función inmediatamente. En su lugar, devuelve 
+						una <b>nueva función</b> donde <b>this</b> está permanentemente vinculado al thisArg que le pasaste.</li>
+				</ul>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+const otraPersona = {
+	nombre: "María"
+};
+function presentar() {
+	console.log("Mi nombre es " + this.nombre);
+}
+presentar.call(otraPersona);  	// Salida: Mi nombre es María ('this' es otraPersona)
+presentar.apply(otraPersona); 	// Salida: Mi nombre es María ('this' es otraPersona)
+const funcionPresentarMaria = presentar.bind(otraPersona); // Crea una nueva función
+funcionPresentarMaria(); 	// Salida: Mi nombre es María (Llamamos la nueva función después,
+				//'this' sigue siendo otraPersona)
+					</code></pre>
+
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>Vinculación new (New Binding)</b><p>Cuando una función es invocada usando 
+				el operador new (como en los constructores), se siguen estos pasos:</p>
+				<ul class="bullet-points">
+					<li class="bullet-point">Se crea un <b>nuevo objeto</b> vacío.</li>
+					<li class="bullet-point"><i><b>this</b></i> dentro de la función constructora se vincula a <b>ese nuevo objeto</b>.</li>
+					<li class="bullet-point">El nuevo objeto es devuelto implícitamente (a menos que la función retorne 
+						explícitamente otro objeto).</li>
+				</ul>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+function Coche(marca, modelo) {
+	// 'this' se refiere al nuevo objeto creado por 'new'
+	this.marca = marca;
+	this.modelo = modelo;
+	this.mostrarInfo = function() {
+	console.log("Coche: " + this.marca + " " + this.modelo);
+};
+}
+
+const miCoche = new Coche("Seat", "León");
+// 'this' dentro de Coche se vinculó a 'miCoche
+console.log(miCoche.marca); // Salida: Seat
+miCoche.mostrarInfo();     // Salida: Coche: Seat León ('this' dentro de mostrarInfo es 'miCoche')
+					</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>Funciones Flecha (Arrow Functions)</b><p>Las funciones flecha (=>) no tienen su propia 
+				vinculación de this. En su lugar, heredan el valor de <b>this</b> del ámbito (scope) léxico en el que fueron definidas. 
+				Ignoran las reglas de vinculación implícita, explícita y new.</p><p>Esto las hace muy útiles en callbacks o 
+				métodos donde quieres que <b>this</b> se refiera al objeto circundante y no cambie dinámicamente.</p>
+				<div class="ejemplo"><b>Ejemplo</b>
+
+					<pre><code class="language-javascript">
+const contador = {
+  valor: 0,
+  iniciar: function() {
+    // En esta función regular, 'this' se refiere al objeto 'contador'
+    console.log("this en iniciar:", this);
+    // Usando una función flecha, 'this' hereda el 'this' de 'iniciar' (que es 'contador')
+    setTimeout(() => {
+      console.log("this dentro de setTimeout (arrow func):", this);
+      this.aumentar(); // Ahora 'this' dentro de aumentar se refiere a 'contador'
+      console.log("Valor actual:", this.valor);
+    }, 1000);
+  },
+  aumentar: function() {
+    this.valor++;
+  }
+};
+contador.iniciar();
+</code></pre>
+				 <p>En el ejemplo anterior, la función flecha dentro de <b>setTimeout</b> no crea su propio <b>this</b>. Hereda el <b>this</b> de la función <b>iniciar</b> que la contiene, que a su vez está vinculada al objeto <b>contador</b> (debido a la vinculación implícita <b>contador.iniciar()</b>).</p>
+				</div>
+			</li>
+			</ol>
+		</div>
+	</div>
+</div>
+</body>	

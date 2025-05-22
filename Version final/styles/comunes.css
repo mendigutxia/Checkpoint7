@@ -1,0 +1,103 @@
+body {
+display: flex;
+justify-content: center;
+}
+
+.web-completa {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    margin: 0px 40px;
+    background-color: rgb(13, 14, 85);
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: whitesmoke;
+    max-width: 1500px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.cuerpo {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    padding: 0px 20px;
+    margin: 0px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9em;
+    line-height: 1.4;
+    max-width: 1500px;
+}
+
+.indice {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 40px 20px;
+    background-color: rgb(201, 214, 230);
+    border-radius: 0px 0px 0px 15px;
+}
+.indice .grid-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    justify-content: left;
+    text-decoration: none;
+    font-weight: 450;
+    color: rgb(0, 0, 2);
+    background-color: rgb(165, 190, 219);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.indice .grid-item:hover {
+    background-color: rgb(103, 103, 119);
+    color: white;
+    transition: 0.3s;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+::marker {
+  font-weight: bold;
+}
+
+.contenido {
+    display: grid;
+    padding: 40px 70px 40px 50px;
+    text-align: justify;
+    background-color: rgb(250, 249, 249);
+    border-radius: 0px 0px 15px 0px;
+}
+
+.puntos-numerados {
+    padding-inline-start: 0px;
+    margin-bottom: 25px;
+}
+
+.bullet-points {
+    padding-inline-start: 20px;
+    margin-bottom: 25px;
+}
+
+.bullet-point {
+    font-weight: normal;
+    list-style-type: disc;
+    margin-top: 10px;
+    padding-inline-start: 0px;
+}
+
+.punto-principal {
+    padding: 10px 0px;
+}
+
+
+

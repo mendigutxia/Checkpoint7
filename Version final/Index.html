@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Pregunta primera</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/comunes.css">
+
+</head>
+<body>
+
+<div class="web-completa">
+	<div class="cabecera">Checkpoint nº 7: preguntas teóricas</div>
+
+	<div class="cuerpo">
+		<div class="indice">
+			<h2>Índice de preguntas</h2>
+			<a href="Index.html" class="grid-item" target="_self">
+				¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</span>
+			</a>
+			<a href="Pregunta2.html" class="grid-item" target="_self">
+				¿Cuáles son todos los tipos de datos JS?</span>
+			</a>
+			<a href="Pregunta3.html" class="grid-item" target="_self">
+				¿Cuáles son las tres funciones de String en JS?</span>
+			</a>
+			<a href="Pregunta4.html" class="grid-item" target="_self">
+				¿Qué es un condicional?</span>
+			</a>
+				<a href="Pregunta5.html" class="grid-item" target="_self">
+				¿Qué es un operador ternario?</span>
+			</a>
+				<a href="Pregunta6.html" class="grid-item" target="_self">
+				¿Cuál es la diferencia entre una declaración de función y una expresión de función?</span>
+			</a>
+				<a href="Pregunta7.html" class="grid-item" target="_self">
+				¿Qué es la palabra clave "this" en JS?</span>
+			</a>
+		</div>
+
+
+		<div class="contenido">
+				<h2>¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</h2>
+				<div class="intro">
+					JavaScript comparte muchas características con otros lenguajes de programación, 
+					pero tiene varias diferencias clave que lo distinguen, especialmente debido a su
+					historia y su rol principal en el desarrollo web.
+				</div>
+				<ol>
+					<li class="puntos-numerados"><b>El Navegador como Entorno Principal (Históricamente)</b>
+						<ul class="bullet-points">
+							<li class="bullet-point">
+								<b>Diferencia.</b> JavaScript fue diseñado <i>específicamente</i>
+								para ejecutarse en navegadores web y manipular el Document Object
+								Model (DOM). Ningún otro lenguaje tiene esta posición nativa y
+								universal dentro de los navegadores. Aunque ahora existen
+								tecnologías como WebAssembly (WASM) que permiten ejecutar otros
+								lenguajes, JavaScript sigue siendo el lenguaje fundamental del
+								front-end web.
+							</li>
+							<li class="bullet-point">
+								<b>Comparación.</b> Lenguajes como Python, Java, C#, Ruby, etc.,
+								se ejecutan principalmente en servidores o como aplicaciones de
+								escritorio/móviles, no directamente en el navegador del usuario de
+								forma nativa (sin plugins o tecnologías adicionales como WASM).
+							</li>
+						</ul>
+					<li class="puntos-numerados"><b>Lenguaje Interpretado y &quot;Just-in-Time Compiled&quot</b>
+						<ul class="bullet-points">
+							<li class="bullet-point">
+								<b>Diferencia. </b>Tradicionalmente, JavaScript ha sido un lenguaje
+								interpretado, lo que significa que el código se ejecuta línea por
+								línea por un motor (como el V8 de Google) sin una fase de
+								compilación previa a un ejecutable binario. Sin embargo, los
+								motores modernos de JavaScript utilizan técnicas de compilación
+								&quot;Just-in-Time&quot; (JIT) para optimizar el rendimiento,
+								compilando partes del código caliente a código máquina durante
+								la ejecución. 
+							</li>
+							<li class="bullet-point">
+								<b>Comparación. </b>A pesar de esto, la percepción y la forma en
+								que se suele trabajar con se alinea más con los lenguajes
+								interpretados en comparación con lenguajes puramente compilados
+								como C++ o Java (que compila a bytecode).
+							</li>
+						</ul>
+					<li class="puntos-numerados"><b>Modelo de Concurrencia. Single-Threaded con Bucle de Eventos (Event Loop)</b>
+						<ul class="bullet-points">
+							<li class="bullet-point">
+								<b>Diferencia.</b> El núcleo de JavaScript (en la mayoría de sus
+								entornos, como navegadores y Node.js) opera en un único hilo
+								principal. Maneja la concurrencia (múltiples tareas a la vez) no
+								mediante múltiples hilos (como Java o C++), sino a través de un
+								<i>bucle de eventos</i> y operaciones de entrada/salida (I/O) no
+								bloqueantes. Las tareas que toman tiempo (como peticiones de red o
+								timers) se delegan y, cuando terminan, colocan una función
+								(callback, Promise, async/await) en una cola para ser ejecutada por
+								el hilo principal cuando esté libre.</li>
+							<li class="bullet-point">
+								<b>Comparación.</b> Muchos otros lenguajes populares utilizan
+								multihilo (multi-threading) para la concurrencia, lo que presenta
+								diferentes desafíos (condiciones de carrera, bloqueos, etc.) y
+								requiere mecanismos de sincronización explícitos. El modelo de concurrencia
+								simplifica algunas cosas pero requiere una forma diferente de
+								pensar sobre el flujo del programa (programación asíncrona).
+								</li>
+						</ul>
+					<li class="puntos-numerados"><b>Tipado Dinámico y Débil (Aunque con Evoluciones)</b>
+					<ul class="bullet-points">
+						<li class="bullet-point">
+							<b>Diferencia.</b> JavaScript es un lenguaje de tipado dinámico,
+							lo que significa que los tipos de las variables se comprueban
+							durante la ejecución, no en tiempo de compilación. Además, a
+							menudo se considera de tipado débil porque realiza conversiones de
+							tipo implícitas de forma muy flexible (a veces de maneras
+							inesperadas, ej. '5' == 5 es true).
+						</li>
+						<li class="bullet-point">
+							<b>Comparación.</b> Lenguajes como Java, C#, C++, Rust o Go son de
+							tipado estático (los tipos se comprueban en compilación,
+							detectando errores antes). Python y Ruby también son de tipado
+							dinámico, pero a menudo se consideran de tipado fuerte porque no
+							realizan tantas conversiones implícitas como JavaScript. La
+							popularidad de TypeScript (un superconjunto de que añade
+							tipos estáticos) muestra el deseo de la comunidad de mitigar
+							algunos de los inconvenientes del tipado dinámico en proyectos
+							grandes.
+						</li>
+					</ul>
+					<li class="puntos-numerados"><b>Herencia Basada en Prototipos (Aunque con Sintaxis de Clases)</b>
+					<ul class="bullet-points">
+						<li class="bullet-point">
+							<b>Diferencia.</b>Fundamentalmente, JavaScript utiliza un modelo de
+							herencia basado en prototipos. Los objetos heredan propiedades y
+							métodos directamente de otros objetos (sus prototipos). Aunque ES6
+							introdujo la sintaxis de class, es en gran medida &quot;azúcar
+							sintáctico&quot; sobre el sistema de prototipos subyacente.
+							</li>
+						<li class="bullet-point">
+							<b>Comparación.</b> La mayoría de los lenguajes orientados a
+							objetos populares (Java, C++, C#, Python) utilizan herencia basada
+							en clases, donde los objetos son instancias de clases que definen
+							su estructura y comportamiento, y la herencia ocurre entre clases.
+						</li>
+					</ul>
+					<li class="puntos-numerados"><b>Naturaleza Asíncrona Fundamental</b>
+					<ul class="bullet-points">
+						<li class="bullet-point">
+							<b>Diferencia.</b> Debido a su entorno original (navegador,
+							esperando eventos del usuario o respuestas de red) y su modelo de
+							concurrencia de un solo hilo, la programación asíncrona (con
+							callbacks, Promises, async/await) no es solo una característica,
+							sino una parte <i>fundamental</i> y omnipresente del desarrollo en
+							JavaScript moderno.
+						</li>
+						<li class="bullet-point">
+							<b>Comparación.</b> Otros lenguajes también soportan operaciones
+							asíncronas, pero a menudo no es tan central en el flujo de trabajo
+							diario como lo es en JavaScript, especialmente en el desarrollo
+							front-end y en Node.js.
+						</li>
+					</ul>
+					<li class="puntos-numerados"><b>Versatilidad y Ecosistema (Full-Stack y Más Allá)</b>
+					<ul class="bullet-points">
+						<li class="bullet-point">
+							<b>Diferencia.</b>A pesar de empezar en el navegador, se ha expandido
+							enormemente. Con Node.js, se usa ampliamente en el backend. Con
+							frameworks como React Native o NativeScript, se usa para desarrollo
+							móvil. Con Electron, para aplicaciones de escritorio. Esta
+							capacidad de usar (casi) el mismo lenguaje en toda la pila
+							(front-end, back-end, móvil, escritorio) es bastante distintiva.
+							Su gestor de paquetes, npm, es uno de los repositorios de software
+							más grandes del mundo.
+						</li>
+						<li class="bullet-point">
+							<b>Comparación.</b> Si bien otros lenguajes pueden usarse en múltiples dominios, pocos
+							tienen la misma extensión y un ecosistema tan masivo que abarque
+							desde el cliente hasta el servidor y más allá con tanta fluidez
+							como JavaScript.
+						</li>
+					</ul>
+					<li class="puntos-numerados"><b>Funciones como Ciudadanos de Primera Clase</b>
+					<ul class="bullet-points">
+						<li class="bullet-point"><b>Diferencia.</b>
+							Las funciones son objetos de primera clase. Esto significa que
+							pueden ser asignadas a variables, pasadas como argumentos a otras
+							funciones y retornadas por otras funciones. Esta característica
+							facilita la programación funcional y patrones como los callbacks y
+							los cierres (closures). 
+							</li>
+							<li class="bullet-point"><b>Comparación. </b>Muchos lenguajes soportan funciones, pero no todos las tratan con
+							el mismo nivel de flexibilidad que JavaScript.
+						</li>
+					</ul>
+				</ol>
+				<div class="resumen">
+					En resumen, lo que principalmente diferencia a JavaScript es su <b>rol intrínseco
+					en la web como lenguaje del lado del cliente</b>, su <b>naturaleza
+					interpretada con optimizaciones JIT</b>, su <b>tipado dinámico y
+					débil</b>, su <b>modelo de concurrencia basado en eventos y
+					asincronía</b> y su <b>modelo de herencia prototipal</b>. Si bien
+					otros lenguajes pueden compartir algunas de estas características,
+					la combinación de todas ellas y su fuerte acoplamiento con el
+					entorno del navegador son lo que hacen a JavaScript único.
+				</div>
+				
+		</div>
+	</div>
+</div>
+</body>	

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Pregunta primera</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/comunes.css">
+	<link rel="stylesheet" href="styles/pregunta3.css">
+	<link rel="stylesheet" href="styles/prism.css">
+
+</head>
+<body>
+<script src="js/prism.js"></script>
+
+<div class="web-completa">
+	<div class="cabecera">Checkpoint nº 7: preguntas teóricas</div>
+
+	<div class="cuerpo">
+		<div class="indice">
+			<h2>Índice de preguntas</h2>
+			<a href="Index.html" class="grid-item" target="_self">
+				¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</span>
+			</a>
+			<a href="Pregunta2.html" class="grid-item" target="_self">
+				¿Cuáles son todos los tipos de datos JS?</span>
+			</a>
+			<a href="Pregunta3.html" class="grid-item" target="_self">
+				¿Cuáles son las tres funciones de String en JS?</span>
+			</a>
+			<a href="Pregunta4.html" class="grid-item" target="_self">
+				¿Qué es un condicional?</span>
+			</a>
+				<a href="Pregunta5.html" class="grid-item" target="_self">
+				¿Qué es un operador ternario?</span>
+			</a>
+				<a href="Pregunta6.html" class="grid-item" target="_self">
+				¿Cuál es la diferencia entre una declaración de función y una expresión de función?</span>
+			</a>
+				<a href="Pregunta7.html" class="grid-item" target="_self">
+				¿Qué es la palabra clave "this" en JS?</span>
+			</a>
+		</div>
+
+		<div class="contenido">
+			<h2>¿Cuáles son las tres funciones de String en JS?</h2>
+			<div class="intro">
+				Aquí tienes un listado de los métodos más comunes (no solo 3 funciones), organizado por 
+				categorías de los métodos de String en JavaScript, con ejemplos prácticos para cada uno.
+			</div>
+			<ol>
+				<li class="puntos-numerados"><b>Métodos de Búsqueda y Verificación</b>
+					  <table>
+						<thead>
+						<tr>
+							<th>Método</th>
+							<th>Descripción</th>
+							<th>Ejemplo</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>.includes(substr)</td>
+							<td>Verifica si contiene una subcadena (case-sensitive).</td>
+							<td>"JavaScript".includes("Script") → true</td>
+						</tr>
+						<tr>
+							<td>.startsWith(substr)</td>
+							<td>Comprueba si empieza con un texto.</td>
+							<td>"Hola".startsWith("Ho") → true</td>
+						</tr>
+						<tr>
+							<td>.endsWith(substr)</td>
+							<td>Comprueba si termina con un texto</td>
+							<td>"Mundo".endsWith("do") → true</td>
+						</tr>
+						<tr>
+							<td>.indexOf(substr)</td>
+							<td>Devuelve el índice de la primera coincidencia.</td>
+							<td>"Java".indexOf("a") → 1</td>
+						</tr>
+						<tr>
+							<td>.lastIndexOf(substr)</td>
+							<td>Índice de la última coincidencia.</td>
+							<td>"Banana".lastIndexOf("a") → 5</td>
+						</tr>
+						<tr>
+							<td>.match(regex)</td>
+							<td>Busca coincidencias con una expresión regular.</td>
+							<td>"123abc".match(/\d+/) → ["123"]</td>
+						</tr>
+						<tr>
+							<td>.search(regex)</td>
+							<td>Retorna el índice de la primera coincidencia con regex.</td>
+							<td>"abc123".search(/\d/) → 3</td>
+						</tr>
+					
+						</tbody>
+					</table>
+				</li>
+				<li class="puntos-numerados"><b>Métodos de Transformación</b>
+					  <table>
+						<thead>
+						<tr>
+							<th>Método</th>
+							<th>Descripción</th>
+							<th>Ejemplo</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>.toUpperCase()</td>
+							<td>Convierte a mayúsculas</td>
+							<td>"hola".toUpperCase() → "HOLA"</td>
+						</tr>
+						<tr>
+							<td>.toLowerCase()</td>
+							<td>Convierte a minúsculas</td>
+							<td>"Hola".startsWith("Ho") → true</td>
+						</tr>
+						<tr>
+							<td>.trim()</td>
+							<td>Elimina espacios al inicio/final</td>
+							<td>" texto ".trim() → "texto"</td>
+						</tr>
+						<tr>
+							<td>.trimStart() / .trimEnd()</td>
+							<td>Elimina espacios solo al inicio o final</td>
+							<td>" hola".trimStart() → "hola"</td>
+						</tr>
+							<tr>
+							<td>.replace(old, new)</td>
+							<td>Reemplaza un fragmento</td>
+							<td>"Hola".replace("a", "o") → "Holo"</td>
+						</tr>
+							<tr>
+							<td>.replaceAll(old, new)</td>
+							<td>Reemplaza todas las ocurrencias</td>
+							<td>"a-a-a".replaceAll("a", "b") → "b-b-b"</td>
+						</tr>
+						</tr>
+							<tr>
+							<td>.normalize()</td>
+							<td>Normaliza caracteres Unicode (ej: á → a´)</td>
+							<td>"á".normalize("NFD") → "a´"</td>
+						</tr>
+						</tbody>
+					</table>
+				</li>
+				<li class="puntos-numerados"><b>Métodos de Extracción y Segmentación</b>
+					  <table>
+						<thead>
+						<tr>
+							<th>Método</th>
+							<th>Descripción</th>
+							<th>Ejemplo</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>.slice(start, end)</td>
+							<td>Extrae una parte (índices negativos permitidos)</td>
+							<td>"JavaScript".slice(0, 4) → "Java"</td>
+						</tr>
+						<tr>
+							<td>.substring(start, end)</td>
+							<td>Similar a slice, pero sin índices negativos</td>
+							<td>"JS".substring(0, 1) → "J"</td>
+						</tr>
+						<tr>
+							<td>.split(separador)</td>
+							<td>Divide el string en un array</td>
+							<td>"a,b,c".split(",") → ["a", "b", "c"]</td>
+						</tr>
+						<tr>
+							<td>.charAt(index)</td>
+							<td>"JS".charAt(1) → "S"</td>
+							<td>"JS".charAt(1) → "S"</td>
+						</tr>
+						<tr>
+							<tr>
+							<td>.charCodeAt(index)</td>
+							<td>Retorna el código Unicode del carácter</td>
+							<td>"A".charCodeAt(0) → 65</td>
+						</tr>
+						</tbody>
+					</table>
+				</li>
+				<li class="puntos-numerados"><b>Métodos de Validación y Comparación</b>
+					  <table>
+						<thead>
+						<tr>
+							<th>Método</th>
+							<th>Descripción</th>
+							<th>Ejemplo</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>.localeCompare(str)</td>
+							<td>Compara dos strings (orden alfabético)</td>
+							<td>"a".localeCompare("b") → -1</td>
+						</tr>
+						<tr>
+							<td>.toString()</td>
+							<td>Convierte a string (útil para objetos)</td>
+							<td>(123).toString() → "123"</td>
+						</tr>
+						<tr>
+							<td>.valueOf()</td>
+							<td>Retorna el valor primitivo del string</td>
+							<td>new String("JS").valueOf() → "JS"</td>
+						</tr>
+						</tbody>
+					</table>
+				</li>
+				<li class="puntos-numerados"><b>Métodos de Relleno y Repetición (ES6+)</b>
+					  <table>
+						<thead>
+						<tr>
+							<th>Método</th>
+							<th>Descripción</th>
+							<th>Ejemplo</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>.padStart(length, fill)</td>
+							<td>Rellena al inicio hasta cierta longitud</td>
+							<td>"5".padStart(3, "0") → "005"</td>
+						</tr>
+						<tr>
+							<td>.padEnd(length, fill)	.	</td>
+							<td>Rellena al final hasta cierta longitud</td>
+							<td>"JS".padEnd(4, "!") → "JS!!"</td>
+						</tr>
+						<tr>
+							<td>.repeat(n)</td>
+							<td>Repite el string n veces</td>
+							<td>"na".repeat(3) → "nanana"</td>
+						</tr>
+						</tbody>
+					</table>
+				</li>
+				<li class="puntos-numerados"><b>Métodos de Iteración</b>
+					  <table>
+						<thead>
+						<tr>
+							<th>Método</th>
+							<th>Descripción</th>
+							<th>Ejemplo</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>.concat(str1, str2)</td>
+							<td>Combina strings (equivalente a +)</td>
+							<td>"Hola".concat(" ", "Mundo") → "Hola Mundo"</td>
+						</tr>
+						<tr>
+							<td>[Symbol.iterator]()</td>
+							<td>Permite iterar carácter por carácter</td>
+							<td>for (let c of "JS") { console.log(c) }</td>
+						</tr>
+						</tbody>
+					</table>
+				</li>
+				<li class="puntos-numerados"><b>Métodos de Plantillas (ES6+)</b>
+					  <table>
+						<thead>
+						<tr>
+							<th>Método</th>
+							<th>Descripción</th>
+							<th>Ejemplo</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Template Strings</td>
+							<td>Strings con interpolación y multilínea</td>
+							<td>`Hola ${nombre}`</td>
+						</tr>
+						</tbody>
+					</table>
+				</li>
+			</ol>		
+		</div>
+
+
+
+
+
+
+	</div>
+</div>
+</body>	

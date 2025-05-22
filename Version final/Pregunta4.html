@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Pregunta primera</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/comunes.css">
+	<link rel="stylesheet" href="styles/pregunta4.css">
+	<link rel="stylesheet" href="styles/prism.css">
+
+</head>
+<body>
+<script src="js/prism.js"></script>
+
+<div class="web-completa">
+	<div class="cabecera">Checkpoint nº 7: preguntas teóricas</div>
+
+	<div class="cuerpo">
+		<div class="indice">
+			<h2>Índice de preguntas</h2>
+			<a href="Index.html" class="grid-item" target="_self">
+				¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?</span>
+			</a>
+			<a href="Pregunta2.html" class="grid-item" target="_self">
+				¿Cuáles son todos los tipos de datos JS?</span>
+			</a>
+			<a href="Pregunta3.html" class="grid-item" target="_self">
+				¿Cuáles son las tres funciones de String en JS?</span>
+			</a>
+			<a href="Pregunta4.html" class="grid-item" target="_self">
+				¿Qué es un condicional?</span>
+			</a>
+				<a href="Pregunta5.html" class="grid-item" target="_self">
+				¿Qué es un operador ternario?</span>
+			</a>
+				<a href="Pregunta6.html" class="grid-item" target="_self">
+				¿Cuál es la diferencia entre una declaración de función y una expresión de función?</span>
+			</a>
+				<a href="Pregunta7.html" class="grid-item" target="_self">
+				¿Qué es la palabra clave "this" en JS?</span>
+			</a>
+		</div>
+
+		<div class="contenido">
+		<h2>¿Qué es un condicional?</h2>
+		<div class="intro">
+			En JavaScript, los <b>condicionales</b> son estructuras que permiten controlar el flujo del programa 
+			basado en condiciones. Veamos qué tipos de condicionales existen.
+		</div>
+		<ol>
+			<li class="puntos-numerados"><b>if</b>
+				<div class="descripcion">
+					La declaración <b>if</b> es la más básica. Ejecuta un bloque de código 
+					si la condición especificada es verdadera (true). El diagrama de flujo 
+					de este tipo de condicionales, es este:
+					<div class="imagen">
+						<img class="img-if" src="images/if.webp" alt="Diagrama de flujo if">
+					</div>
+				</div>
+				<div><b>Sintaxis</b>
+					<pre><code class="language-javascript">
+if (condición) {<br>
+	// Código a ejecutar si la condición es verdadera<br>
+}		
+				</code></pre>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+let edad = 18;<br>
+if (edad >= 18) {<br>
+	console.log("Eres mayor de edad");<br>
+}
+					</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>if - else</b>
+				<div class="descripcion">
+					Evalúa una condición y ejecuta bloques de código según sea true o false.
+				</div>
+				<div class="imagen">
+						<img class="img-if-else"src="images/if_else.webp" alt="Diagrama de flujo if-else">
+				</div>
+				<div><b>Sintaxis</b>
+					<pre><code class="language-javascript">
+if (condicion) {<br>
+	// Código a ejecutar si la condicion es verdadera<br>
+} else {<br>
+	// Código a ejecutar<br>
+} else {<br>
+	// Código a ejecutar si la condicion es falsa<br>
+}				
+				</code></pre>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+let edad = 18;<br>
+if (edad >= 18) {<br>
+	console.log("Eres mayor de edad");<br>
+} else {<br>
+	console.log("Eres menor de edad");<br>
+}
+					</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>if – else if – else</b>
+				<div class="descripcion">
+					Este tipo se usa para múltiples condiciones.
+				</div>
+				<div class="imagen">
+						<img class="img-if-else-if" src="images/if_else_if.png" alt="Diagrama de flujo if-else-if">
+				</div>
+				<div><b>Sintaxis</b>
+					<pre><code class="language-javascript">
+if (condicion1) {
+
+	// Código a ejecutar si condicion1 es verdadera
+
+} else if (condicion2) {
+
+	// Código a ejecutar si condicion2 es verdadera
+
+} else {
+
+	// Código a ejecutar si ninguna de las condiciones anteriores es verdadera
+
+}			
+				</code></pre>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+let hora = 14;
+if (hora < 12) {
+	console.log("Buenos días");
+} else if (hora < 19) {
+	console.log("Buenas tardes"); // Este se ejecuta
+} else {
+	console.log("Buenas noches");
+}
+					</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>switch</b>
+				<div class="descripcion">
+					La declaración switch se utiliza para realizar diferentes acciones basadas en diferentes 
+					condiciones de un mismo valor o expresión. Es especialmente útil cuando tienes múltiples 
+					posibles valores para una variable y quieres ejecutar código diferente para cada uno.
+				</div>
+				<div class="imagen">
+						<img class="img-switch" src="images/switch.webp" alt="Diagrama de flujo switch">
+					</div>
+				<div><b>Sintaxis</b>
+					<pre><code class="language-javascript">
+switch (expresion) {
+
+case valor1:
+
+	// Código a ejecutar si expresion coincide con valor1
+
+	break;
+
+case valor2:
+
+	// Código a ejecutar si expresion coincide con valor2
+
+	break;
+
+	// ... más casos
+
+	default:
+
+	// Código a ejecutar si expresion no coincide con ningún caso
+
+}		
+				</code></pre>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+switch (dia) {
+case "Lunes":
+	console.log("Inicio de semana");
+	break;
+case "Viernes":
+	console.log("¡Fin de semana cerca!");
+	break;
+default:
+	console.log("Día normal");
+}
+				</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>Evaluación de <i>truthy</i> y <i>falsy</i></b>
+				<div class="descripcion">
+					JavaScript evalúa condiciones de forma flexible. Los valores <b>falsy</b> son: 
+					false, 0, "", null, undefined, NaN.
+					El resto son <b>truthy</b>.
+				</div>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+let nombre = "";
+if (nombre) {
+	console.log("Hola " + nombre);
+} else {
+	console.log("Nombre no definido"); // Se ejecuta esto
+}
+					</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>Operadores lógicos en condicionales</b>
+				<div class="descripcion">
+					Se pueden combinar condiciones con && (AND), || (OR), ! (NOT).
+				</div>
+				<div class="ejemplo"><b>Ejemplo</b>
+					<pre><code class="language-javascript">
+let clima = "soleado";
+let hora = 15;
+if (clima === "soleado" && hora < 18) {
+	console.log("Puedes salir al parque");
+} else if (clima === "lluvioso") {
+	console.log("Mejor quédate en casa");
+} else {
+	console.log("Plan alternativo");
+}
+// Resultado: "Puedes salir al parque"
+					</code></pre>
+				</div>
+			</li>
+
+			<li class="puntos-numerados"><b>Diferencia clave entre <i>if</i> y <i>switch</i></b>
+				<table>
+					<thead>
+					<tr>
+						<th>if - else</th>
+						<th>switch</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Evalúa rangos o condiciones complejas</td>
+						<td>Compara <b>igualdad estricta</b> (===) en un valor</td>
+					</tr>
+					<tr>
+						<td>Más flexible</td>
+						<td>Más legible para múltiples casos fijos</td>
+					</tr>
+					</tbody>
+				</table>
+			</li>
+
+			<li class="puntos-numerados"><b>Consejos finales</i></b><br>
+				<ul>
+					<li class="bullet-point">Usa <b>if</b> para condiciones simples y <b>switch</b> para múltiples casos.</li>
+					<li class="bullet-point">Recuerda la importancia de los <b>break</b> en switch.</li>
+					<li class="bullet-point">Usa <b>===</b> para comparaciones estrictas.</li>
+					<li class="bullet-point">Evita anidar demasiados ifs para mantener el código limpio.</li>
+				</ul>
+			</li>
+
+
+
+		</ol>
+		</div>
+
+
+
+
+
+
+	</div>
+</div>
+</body>	
